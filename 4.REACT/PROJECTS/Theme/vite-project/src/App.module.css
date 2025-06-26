@@ -1,0 +1,24 @@
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .lightTheme {
+    background-color: #fffaf2;
+    color: #000;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  
+  .darkTheme {
+    background-color: #121212;
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  
