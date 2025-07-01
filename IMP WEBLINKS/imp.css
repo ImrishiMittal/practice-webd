@@ -40,20 +40,7 @@ button:hover {
     background-image: linear-gradient(to right, rgb(0, 17, 17), rgb(236, 22, 22));
 }
 
-.fa-book, .fa-train, .fa-youtube, .fa-code, .fa-github, .fa-x, .fa-tv, .fa-magnifying-glass {
+.fa-display-chart-up, .fa-train, .fa-youtube, .fa-code, .fa-github, .fa-x, .fa-tv, .fa-magnifying-glass {
     margin-left: 10px;
     color: rgb(255, 215, 0);
 }
-/* 
-body::before {
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80');
-    position: absolute;
-    background-size: cover;
-    opacity: 0.25;
-    z-index: -1;
-} */

@@ -1,6 +1,6 @@
-let ude = document.getElementById("udemy");
+let ude = document.getElementById("tv");
 ude.addEventListener("click",()=>{
-    window.open ("https://www.udemy.com/home/my-courses/learning/", "_blank");
+    window.open ("https://in.tradingview.com/", "_blank");
 })
 
 let hot = document.getElementById("JIOHOTSTAR")
