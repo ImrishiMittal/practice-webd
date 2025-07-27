@@ -23,10 +23,6 @@ let chat = document.getElementById("CHATGPT");
 chat.addEventListener("click", ()=>{
     window.open("https://chat.openai.com/","_blank")
 })
-let sony = document.getElementById("SONYLIV");
-sony.addEventListener("click", ()=>{
-    window.open("https://www.sonyliv.com/","_blank")
-})
 let code = document.getElementById("LEETCODE");
 code.addEventListener("click",()=>{
     window.open("https://leetcode.com/explore/","_blank")
