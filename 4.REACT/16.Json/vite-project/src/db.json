@@ -1,0 +1,18 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" },
+    "users": [
+      { "id": 1, "name": "Rishi", "email": "rishi@example.com" },
+      { "id": 2, "name": "Samiksha", "email": "samiksha@example.com" }
+    ],
+    "products": [
+      { "id": 1, "name": "iPhone 15", "price": 999 },
+      { "id": 2, "name": "Galaxy S23", "price": 899 }
+    ]
+  }
+  
