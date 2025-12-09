@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+<%- include('Partials/Header', { pageTitle: "Airbnb Home" }) %>
 </head>
 <body>
     <h1>Welcome to Airbnb</h1>
-<a href="/add-home">Add Home</a>
+    <a href="/add-home">Add Home</a>
 
-<ul>
-    <% registeredHomes.forEach(home => { %>
-        <li><%= home.houseName %></li>
-    <% }) %>
-</ul>
-
+    <ul>
+        <% registeredHomes.forEach(home => { %>
+            <li><%= home.houseName %></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
