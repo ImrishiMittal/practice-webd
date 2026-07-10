@@ -1,4 +1,4 @@
-class Product {
+class Products {
 
     name: string;
     price: number;
@@ -54,7 +54,7 @@ class Product {
 
 // creating object
 
-let product = new Product(
+let products = new Product(
     "Samsung",
     100000,
     101
