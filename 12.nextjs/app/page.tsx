@@ -1,7 +1,9 @@
+import ImageCard from "@/components/ImageCard";
+
 export default function Home() {
   return (
-    <h1 className="text-5xl font-bold text-red-500">
-      Hello Next.js
-    </h1>
+    <div>
+      <ImageCard />
+    </div>
   );
 }
