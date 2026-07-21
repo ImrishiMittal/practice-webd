@@ -1,11 +1,36 @@
-import SearchInfo from "@/components/SearchInfo";
+type Props = {
+  params: Promise<{
+    id: string;
+  }>;
+};
 
-export default function Products() {
+// Runs at BUILD TIME
+export async function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+    { id: "3" },
+  ];
+}
+
+export default async function ProductPage({ params }: Props) {
+  const { id } = await params;
+
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+
+  const product = await res.json();
+
   return (
-    <div>
-      <h1>Products</h1>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold">
+        {product.title}
+      </h1>
 
-      <SearchInfo />
+      <p className="mt-4">
+        {product.body}
+      </p>
     </div>
   );
 }

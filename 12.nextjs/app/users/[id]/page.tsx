@@ -1,38 +1,46 @@
 import db from "@/lib/db";
 import { notFound } from "next/navigation";
 
-type Params = {
+type Props = {
   params: Promise<{
     id: string;
   }>;
 };
 
-export default async function UserPage({ params }: Params) {
+// Runs during build
+export async function generateStaticParams() {
+  const [rows]: any = await db.query(
+    "SELECT user_id FROM users"
+  );
+
+  return rows.map((user: any) => ({
+    id: user.user_id.toString(),
+  }));
+}
+
+export default async function UserPage({ params }: Props) {
   const { id } = await params;
 
-  let rows: any;
-
-try {
-  [rows] = await db.query(
+  const [rows]: any = await db.query(
     "SELECT * FROM users WHERE user_id = ?",
     [id]
   );
-} catch (err) {
-  console.error(err);
-  throw err;
-}
 
-if (rows.length === 0) {
-  notFound();
-}
+  if (rows.length === 0) {
+    notFound();
+  }
 
   const user = rows[0];
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold">{user.name}</h1>
-      <p>Email: {user.email}</p>
-      <p>Role: {user.role}</p>
+      <h1 className="text-3xl font-bold">
+        {user.name}
+      </h1>
+
+      <p>{user.email}</p>
+
+      <p>{user.role}</p>
     </div>
   );
 }
