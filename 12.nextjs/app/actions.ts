@@ -1,19 +1,25 @@
 "use server";
 
 import db from "@/lib/db";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createUser(
-  prevState: any,
+  prevState: {
+    success: boolean;
+    message: string;
+  },
   formData: FormData
 ) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const role = formData.get("role") as string;
 
-  if (!name || !email) {
+  // Validation
+  if (!name || !email || !role) {
     return {
       success: false,
-      message: "Name and Email are required!",
+      message: "All fields are required!",
     };
   }
 
@@ -22,11 +28,8 @@ export async function createUser(
       "INSERT INTO users(name,email,role) VALUES(?,?,?)",
       [name, email, role]
     );
-
-    return {
-      success: true,
-      message: "User added successfully!",
-    };
+    revalidatePath("/users");
+    redirect("/users");
   } catch (err: any) {
     return {
       success: false,
